@@ -16,6 +16,16 @@ my_order = {}
 	#By end it should look something like: 
 		#my_order = { style: "burrito", meat: "chicken", rice_bean_veg: ["cilantro-lime brown rice", "black beans"], toppings: ["guacamole", "cheese", "romaine lettuce"]}
 
+my_order[:style] = main[:style][0]
+my_order[:meat] = main[:meat][2]
+my_order[:rice_bean_veg] = main[:rice_bean_veg][1]
+
+my_order[:toppings] = Array.new 
+
+my_order[:toppings] << main[:toppings][0]
+my_order[:toppings] << main[:toppings][2]
+my_order[:toppings] << main[:toppings][3]
+
 
 #########  LETS GO!  ##########
 
@@ -23,11 +33,13 @@ my_order = {}
 	#you are in line at chipotle and what to know what different styles they have
 	#Display all the options available for style 
 
+puts main[:style]
 
 
 #STEP TWO:
 	#Using the empty my_order hash, 
 	#Chose your style from the available options and add a new key value pair to that hash
+
 
 
 #STEP THREE:
@@ -40,6 +52,12 @@ my_order = {}
 #STEP FIVE
 	#Check to see if your favorite topping is included in the available options
 
+if main[:toppings].include? "cheese"
+	puts "cheese is included"
+else
+	puts "cheese is not included"
+end
+
 
 #STEP SIX
 	#Chose at least 3 toppings to add to your order
@@ -47,6 +65,9 @@ my_order = {}
 #STEP SEVEN
 	#Oops! You didn't want one of those toppings! How do you remove the second one you put in there?
 
+puts my_order 
+my_order[:toppings].delete_at(1)
+puts my_order
 
 #STEP EIGHT
 	#Print your hash and see if your order was made correctly! Bon Appetit! 
